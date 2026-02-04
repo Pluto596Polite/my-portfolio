@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import Navbar from "../Components/Navbar";
 export default function AboutMe() {
     return (
         <div className="container mx-auto px-5">
+            <Navbar />
             <h1>About Me</h1>
             <h2>Something that I can't live without is ice cream</h2>
             <Image
@@ -30,11 +32,11 @@ export default function AboutMe() {
                     </p>
                 </div>
             </div>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4">{/*this is the button container*/}
                 <button className="bg-white text-black px-5 py-2 rounded-full border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none">
                     Download my CV
-                </button>
-                <Link href="/" className="bg-white text-black px-5 py-2 rounded-full border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"> Home Screen</Link>
+                </button>{/*this is the left button*/}
+                <Link href="/" className="bg-white text-black px-5 py-2 rounded-full border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"> Home Screen</Link>{/**This is the button to the home screen */}
             </div>
         </div>
     );
