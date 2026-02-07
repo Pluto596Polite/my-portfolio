@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import Link from "next/link";
+
 export default function Projects() {
     return (
         <div className="container mx-auto px-5">
