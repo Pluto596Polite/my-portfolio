@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../Components/Navbar";
+import PracticeWidget from "../Components/PracticeWidget";
 export default function AboutMe() {
     return (
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto px-5 pb-20">{/*this shows how to add padding to the bottom of the page*/}
             <Navbar />
             <h1>About Me</h1>
             <h2>Something that I can&apos;t live without is ice cream</h2>
@@ -37,6 +38,33 @@ export default function AboutMe() {
                     Download my CV
                 </button>{/*this is the left button*/}
                 <Link href="/" className="bg-white text-black px-5 py-2 rounded-full border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"> Home Screen</Link>{/**This is the button to the home screen */}
+            </div>
+            <div>
+                ```tsx
+                <div className="mt-12 p-8 border-2 border-black bg-yellow-50 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="flex items-center justify-between mb-6">
+                        <h3 className="text-xl font-black uppercase italic tracking-tighter">Practice Tracker</h3>
+                        <div className="h-3 w-3 rounded-full bg-green-500 border border-black animate-pulse"></div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div className="space-y-1">
+                            <p className="text-xs font-bold uppercase text-gray-500">Current Focus</p>
+                            <p className="text-lg font-bold">Distributed Systems</p>
+                        </div>
+                        <div className="space-y-1">
+                            <p className="text-xs font-bold uppercase text-gray-500">Daily Streak</p>
+                            <p className="text-lg font-bold">24 Days</p>
+                        </div>
+                        <div className="space-y-1">
+                            <p className="text-xs font-bold uppercase text-gray-500">Mastery Level</p>
+                            <div className="w-full bg-gray-200 h-4 border border-black mt-1">
+                                <div className="bg-blue-500 h-full w-[75%] border-r border-black"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ```
+
             </div>
         </div>
     );
