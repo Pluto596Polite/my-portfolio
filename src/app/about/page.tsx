@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../Components/Navbar";
 import PracticeWidget from "../Components/PracticeWidget";
+import GradientWidget from "../Components/GradientWidget";
 export default function AboutMe() {
     return (
         <div className="container mx-auto px-5 pb-20">{/*this shows how to add padding to the bottom of the page*/}
@@ -65,6 +66,7 @@ export default function AboutMe() {
                     tag="Empty"
                 />
             </div>
+            <GradientWidget />
         </div>
     );
 }
