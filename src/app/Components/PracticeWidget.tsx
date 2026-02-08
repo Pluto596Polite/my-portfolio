@@ -5,17 +5,34 @@ import React from "react";
 interface PracticeWidgetProps {
     title: string;
     description: string;
+    currentFocus: string;
+    dailyStreak: number;
     tag?: string; //the ? shows that this property is optional
 }
 
-export default function PracticeWidget({ title, description, tag = 'Task' }: PracticeWidgetProps) {
+export default function PracticeWidget({ title, currentFocus, dailyStreak, tag = 'Task' }: PracticeWidgetProps) {
     return (
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col gap-2 w-full">
-            <div className="flex items-center justify-between">
-                <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">{tag}</span>
+        <div className="p-8 border-2 border-black bg-yellow-50 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">{/*this is the yellow container*/}
+            <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-black uppercase italic tracking-tighter">{title}</h3>
+                <div className="h-3 w-3 rounded-full bg-green-500 border border-black animate-pulse"></div>{/*blinking green light in the top right of the container*/}
             </div>
-            <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-            <p className="text-gray-600">{description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">{/*this is the grid container*/}
+                <div className="space-y-1">
+                    <p className="text-xs font-bold uppercase text-gray-500">Current Focus</p>
+                    <p className="text-lg font-bold">{currentFocus}</p>
+                </div>
+                <div className="space-y-1">
+                    <p className="text-xs font-bold uppercase text-gray-500">Daily Streak</p>
+                    <p className="text-lg font-bold">{dailyStreak}</p>
+                </div>
+                <div className="space-y-1">
+                    <p className="text-xs font-bold uppercase text-gray-500">Mastery Level</p>
+                    <div className="w-full bg-gray-200 h-4 border border-black mt-1">
+                        <div className="bg-blue-500 h-full w-[50%] border-r border-black"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
